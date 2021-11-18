@@ -20,4 +20,10 @@
 
 7. write a SQL query to find the highest-rated movies. Return movie title, movie year, review stars and releasing country. 
 
+8. write a SQL query to find the movies with ID 905 or 907 or 917. Return movie title.
+
+9. write a SQL query to find the movies without any rating. Return movie title.
+
+10. write a SQL query to find those movies, which was made before 1998. Return movie title. 
+
  
