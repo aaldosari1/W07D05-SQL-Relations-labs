@@ -29,4 +29,4 @@
 
 you can use the next ERD to make it easer to read the data:
 
-<img src="ERD.PNG" width=80%/>
+<img src="ERD.png" width=80%/>
