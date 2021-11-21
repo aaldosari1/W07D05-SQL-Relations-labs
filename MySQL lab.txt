@@ -1,0 +1,47 @@
+1.
+select mov_title from movie where mov_id ="905" or mov_id ="907"or mov_id ="917";
+
+2.
+SELECT actor.act_fname, actor.act_lname, movie_cast.role
+FROM movie_cast 
+INNER JOIN actor ON movie_cast.act_id = actor.act_id
+INNER JOIN movie ON movie_cast.mov_id = movie.mov_id
+WHERE mov_title = "Annie Hall";
+
+3.
+SELECT actor.act_fname, actor.act_lname, movie.mov_title, movie.mov_dt_rel
+FROM movie_cast 
+INNER JOIN actor ON movie_cast.act_id = actor.act_id
+INNER JOIN movie ON movie_cast.mov_id = movie.mov_id
+WHERE mov_year BETWEEN 1990 AND 2000;
+
+4.
+SELECT movie.mov_year
+FROM movie
+INNER JOIN rating ON movie.mov_id = rating.mov_id
+WHERE rev_stars = 3 OR rev_stars = 4 order BY movie.mov_year ASC;
+
+5.
+SELECT movie.mov_id, movie.mov_title, movie.mov_dt_rel
+FROM movie WHERE movie.mov_title = "Boogie Nights";
+
+6.
+SELECT movie.mov_title,director.dir_fname, director.dir_lname, rating.rev_stars
+FROM movie 
+JOIN movie_direction USING (mov_id)
+JOIN director USING (dir_id) 
+LEFT JOIN rating USING (mov_id)
+WHERE rating.rev_stars IS NOT NULL;
+
+8.
+SELECT * FROM movie WHERE mov_id = 905 OR mov_id = 907 OR mov_id = 917;
+
+9.
+SELECT movie.mov_title
+FROM movie 
+WHERE movie.mov_id NOT IN (SELECT rating.mov_id FROM rating);
+
+10.
+SELECT movie.mov_title
+FROM movie
+WHERE movie.mov_year <= 1997;
